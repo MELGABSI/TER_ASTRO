@@ -31,7 +31,7 @@ dropout = 0.8  # Dropout rate
 
 
 # Load the data
-X_train, X_val = open_data('./data/')
+X_train, X_val = open_data('./Data/')
 
 N = X_train.shape[0] # nbr of element in train db
 Nval = X_val.shape[0] # nbr of element in val db

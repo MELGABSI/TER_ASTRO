@@ -20,8 +20,7 @@ def open_data(direc, ratio_train=0.8):
 
     datadir = direc + '/tab' 
     data_train = np.loadtxt(datadir + '_train.csv', delimiter=';')
-    data_test_val = np.loadtxt(datadir + '_test.csv', delimiter=';')[:-1]
-    data = np.concatenate((data_train, data_test_val), axis=0)
+    data = np.concatenate((data_train), axis=0)
 
     N, D = data.shape # N nbr of element, D Dim of elements
 
