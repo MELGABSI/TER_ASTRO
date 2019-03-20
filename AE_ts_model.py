@@ -143,7 +143,7 @@ class Model:
             outputs = tf.concat(outputs_dec, axis=0)  # tensor in [sl*batch_size,hidden_size]
             h_out = tf.nn.xw_plus_b(outputs, W_o, b_o)
             #h_mu, h_sigma_log = tf.unstack(tf.reshape(h_out, [sl, batch_size, params_o]), axis=2)
-            h_mu, h_sigma_log = tf.unstack(tf.reshape(h_out, [sl, batch_size, params_o]))
+            h_mu, h_sigma_log = tf.unstack(tf.reshape(h_out, [sl, batch_size, params_o]), axis=2)
             h_sigma = tf.exp(h_sigma_log) # Computes exponential of x element-wise
             dist = tf.contrib.distributions.Normal(h_mu, h_sigma)
             px = dist.log_prob(tf.transpose(self.x))
