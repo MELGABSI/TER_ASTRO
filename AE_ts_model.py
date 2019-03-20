@@ -65,7 +65,7 @@ def plot_z_run(z_run, label):
     # THen fit a tSNE
     tSNE_model = TSNE(verbose=2, perplexity=80, min_grad_norm=1E-12, n_iter=3000)
     z_run_tsne = tSNE_model.fit_transform(z_run)
-    ax1[1].scatter(z_run_tsne[:, 0], z_run_tsne[:, 1], c=label, marker='*', linewidths=0)
+    ax1[1].scatter(z_run_tsne[:, 0], z_run_tsne[:, 1], marker='*', linewidths=0)
     ax1[1].set_title('tSNE on z_run')
 
     plt.show()
