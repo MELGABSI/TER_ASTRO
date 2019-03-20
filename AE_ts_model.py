@@ -59,7 +59,7 @@ def plot_z_run(z_run, label):
     #PCA_model = TruncatedSVD(n_components=3).fit(z_run)
     PCA_model = PCA().fit(z_run)
     z_run_reduced = PCA_model.transform(z_run) #Fit the model with X and apply the dimensionality reduction on X
-    ax1[0].scatter(z_run_reduced[:, 0], z_run_reduced[:, 1], c=label, marker='*', linewidths=0)
+    ax1[0].scatter(z_run_reduced[:, 0], z_run_reduced[:, 1], marker='*', linewidths=0)
     ax1[0].set_title('PCA on z_run')
 
     # THen fit a tSNE
