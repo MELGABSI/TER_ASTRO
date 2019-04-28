@@ -27,7 +27,7 @@ tab = pd.read_csv("Data/table.csv", sep=";")
 
 # In[4]:
 
-
+tab.drop(columns = ['Unnamed: 0','None','object_id','passband_ne'], inplace=True)
 t = tab.values
 min_max_scaler = preprocessing.MinMaxScaler()
 t = min_max_scaler.fit_transform(t)
